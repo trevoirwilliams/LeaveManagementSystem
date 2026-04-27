@@ -18,7 +18,7 @@ namespace LeaveManagementSystem.Application
     {
         public static IServiceCollection AddApplicationServices(this IServiceCollection services)
         {
-            services.AddAutoMapper(Assembly.GetExecutingAssembly());
+            services.AddAutoMapper(cfg => cfg.AddMaps(Assembly.GetExecutingAssembly()));
             services.AddScoped<ILeaveTypesService, LeaveTypesService>();
             services.AddScoped<ILeaveAllocationsService, LeaveAllocationsService>();
             services.AddScoped<ILeaveRequestsService, LeaveRequestsService>();
